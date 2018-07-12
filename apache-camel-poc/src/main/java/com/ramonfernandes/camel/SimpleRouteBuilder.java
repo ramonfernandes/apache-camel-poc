@@ -12,6 +12,7 @@ public class SimpleRouteBuilder extends RouteBuilder {
     @Override
     public void configure() {
         from("file:" + INPUT_FOLDER + "?noop=true")
+                .process(new ChangeStringMessageProcessor())
                 .to("file:" + OUTPUT_FOLDER);
     }
 }
