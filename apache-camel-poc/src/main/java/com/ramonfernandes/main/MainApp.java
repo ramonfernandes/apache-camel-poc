@@ -1,6 +1,6 @@
 package com.ramonfernandes.main;
 
-import com.ramonfernandes.camel.SimpleRouteBuilder;
+import com.ramonfernandes.camel.route.SimpleRouteBuilder;
 import org.apache.camel.CamelContext;
 import org.apache.camel.impl.DefaultCamelContext;
 
