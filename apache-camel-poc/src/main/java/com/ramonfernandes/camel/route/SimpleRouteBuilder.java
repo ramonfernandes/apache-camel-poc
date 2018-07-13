@@ -18,7 +18,8 @@ public class SimpleRouteBuilder extends RouteBuilder {
                 .process(new GenerateArrayFromStringFileProcessor())
                 .split(body())
                 .process(new CreateObjectsFromString())
-                .aggregate(new AggregateObjectsStrategy())
+                .aggregate(header("identifier"), new AggregateObjectsStrategy())
+                .completionFromBatchConsumer()
                 .to("file:" + OUTPUT_FOLDER);
     }
 }
